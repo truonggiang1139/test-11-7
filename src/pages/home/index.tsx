@@ -1,7 +1,5 @@
-
 import reactLogo from "../../assets/react.svg";
 import viteLogo from "/vite.svg";
-import { TextInput } from "@mantine/core";
 export default function Home() {
   return (
     <>
@@ -14,12 +12,7 @@ export default function Home() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <TextInput
-      label="Input label"
-      description="Input description"
-      placeholder="Input placeholder"
-    />
-    
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>

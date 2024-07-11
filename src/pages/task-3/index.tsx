@@ -20,8 +20,11 @@ export default function Task3() {
       for (let j = i + 1; j < array.length; j++) {
         subArray.push(array[j]);
         if (array[j] >= subArray[0]) {
-          i =  j - 1;
+          i = j - 1;
           break;
+        }
+        if (j === array.length - 1) {
+          i = j;
         }
       }
       result.push(subArray);
@@ -39,7 +42,7 @@ export default function Task3() {
       const depth = Math.min(item[0], item[item.length - 1]);
 
       for (let i = 1; i < item.length - 1; i++) {
-        result += depth - item[i];
+        result += Math.abs(depth - item[i]);
       }
     });
 
@@ -50,15 +53,9 @@ export default function Task3() {
       <Input handleRequest={handleRequest} />
 
       {!!array.length && (
-        <Flex direction={"column"} gap={50}  mt={30}>
-           <Text size="lg">Your input: {array.join(',')}</Text>
-          <Flex
-            direction={"row"}
-            gap={50}
-            align={"flex-end"}
-           
-            mx={"auto"}
-          >
+        <Flex direction={"column"} gap={50} mt={30}>
+          <Text size="lg">Your input: {array.join(",")}</Text>
+          <Flex direction={"row"} gap={50} align={"flex-end"} mx={"auto"}>
             {array.map((item, index) => (
               <Column key={index} height={item} />
             ))}
